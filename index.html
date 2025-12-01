@@ -1,1426 +1,1057 @@
-<!doctype html>
-<html class="no-js" lang="en">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <!-- Title Tag (Main Target Keywords) -->
-    <title>Phenom Platform - Monetize Your Social Media & Earn Passive Income</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Film & Entertainment - Savvy Media Africa</title>
 
-    <!-- Meta Description (Compelling and Keyword-Rich) -->
-    <meta name="description" content="Phenom Platform empowers users to monetize their social media accounts, mine cryptocurrencies, and earn passive income. Join Phenom Network for financial freedom, daily rewards, and endless opportunities." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Meta Keywords (Targeted to Key Terms) -->
-    <meta name="keywords" content="Phenom, Phenom platform, Phenom Network, Phenom app, Phenom Coin, TikTok monetization, phenomnet, earn rewards, Phenom Nigeria, affiliate marketing, passive income" />
+<!-- Global header/footer + nav styles -->
+<link rel="stylesheet" href="/savvy.css">
 
-    <!-- Viewport for Mobile Optimization -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <!-- Favicon (Icon for Browsers and Mobile Devices) -->
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="icon" href="favicon.ico">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 
-    <!-- Open Graph Meta Tags (For Social Media Sharing) -->
-    <meta property="og:title" content="Phenom Platform - Monetize Your Social Media & Earn Passive Income" />
-    <meta property="og:description" content="Phenom Platform empowers users to monetize their social media accounts, mine cryptocurrencies, and earn passive income. Join Phenom Network for financial freedom, daily rewards, and endless opportunities." />
-    <meta property="og:image" content="https://phenomnet.com.ng/user/assets/cover_home.jpg" />
-    <meta property="og:url" content="https://www.phenomnet.com.ng" />
-    <meta property="og:type" content="website" />
+:root{
+  --deep-navy:#001d3d;
+  --navy:#002855;
+  --bright-cyan:#00D4FF;
+  --cyan:#00A8E8;
+  --bright-green:#00FF88;
+  --green:#00E676;
+  --orange:#FF6B35;
+  --yellow:#FFB800;
+  --white:#FFFFFF;
+}
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:title" content="Phenom Platform - Monetize Your Social Media & Earn Passive Income" />
-    <meta name="twitter:description" content="Join Phenom Platform and start earning passive income by monetizing your social media accounts, mining Phenom Coin, and engaging with RewardRush!" />
-    <meta name="twitter:image" content="https://phenomnet.com.ng/user/assets/cover_home.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
+body{
+  font-family:'Sora',sans-serif;
+  color:var(--white);
+  background:var(--deep-navy);
+  overflow-x:hidden;
+  line-height:1.6;
+  font-weight:400;
+  cursor:none;
+}
 
-    <!-- Structured Data (Schema.org) for Better Search Visibility -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Phenom Platform",
-        "url": "https://www.phenomnet.com.ng",
-        "description": "Phenom Platform allows users to monetize their social media accounts, mine cryptocurrencies, and earn passive income through advanced earning models and daily rewards.",
-        "logo": "https://phenomnet.com.ng/user/assets/cover_home.jpg",
-        "sameAs": [
-            "https://www.facebook.com/phenomnet",
-            "https://www.instagram.com/phenomnet",
-            "https://www.twitter.com/phenomnet"
-        ],
-        "potentialAction": {
-            "@type": "Action",
-            "name": "Sign Up and Earn",
-            "target": "https://www.phenomnet.com.ng/register.php"
-        }
-    }
-    </script>
+/* ===== Custom cursor ===== */
+.cursor{
+  position:fixed;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--bright-cyan);
+  pointer-events:none;
+  z-index:99999;
+  opacity:.8;
+  transition:transform .1s ease;
+  mix-blend-mode:screen;
+  box-shadow:0 0 12px var(--bright-cyan),0 0 24px rgba(0,212,255,.5)
+}
+.cursor-follower{
+  position:fixed;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  border:1.5px solid var(--bright-cyan);
+  pointer-events:none;
+  z-index:99998;
+  opacity:.4;
+  transition:all .25s ease;
+  box-shadow:inset 0 0 8px rgba(0,212,255,.3)
+}
 
-    <!-- Structured Data for Registration, Login, and Get Code Actions -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": "https://www.phenomnet.com.ng",
-        "potentialAction": [
-            {
-                "@type": "RegisterAction",
-                "target": "https://www.phenomnet.com.ng/register.php"
-            },
-            {
-                "@type": "LoginAction",
-                "target": "https://www.phenomnet.com.ng/login.php"
-            },
-            {
-                "@type": "Action",
-                "name": "Get Code",
-                "target": "https://www.phenomnet.com.ng/register.php"
-            }
-        ]
-    }
-    </script>
+/* ========== HERO ========== */
+.hero{
+  min-height:90vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  padding:12rem 4rem 6rem;
+  overflow:hidden;
+  background:linear-gradient(135deg,var(--deep-navy) 0%,var(--navy) 100%);
+}
+.floating-shape{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(120px);
+  opacity:.12;
+  pointer-events:none;
+  animation:float 20s ease-in-out infinite;
+}
+.shape-1{
+  width:700px;
+  height:700px;
+  background:linear-gradient(135deg,var(--bright-cyan),var(--cyan));
+  top:10%;
+  left:5%;
+}
+.shape-2{
+  width:600px;
+  height:600px;
+  background:linear-gradient(135deg,var(--orange),var(--yellow));
+  bottom:6%;
+  right:5%;
+  animation-delay:-10s;
+}
+@keyframes float{
+  0%,100%{transform:translate(0,0) scale(1)}
+  25%{transform:translate(50px,-50px) scale(1.1)}
+  50%{transform:translate(80px,-80px) scale(1.2)}
+  75%{transform:translate(30px,-40px) scale(1.15)}
+}
+.hero-content{
+  text-align:center;
+  max-width:1600px;
+  position:relative;
+  z-index:2;
+}
+.hero-title{
+  font-family:'Sora',sans-serif;
+  font-size:clamp(2.8rem,9vw,7rem);
+  font-weight:500;
+  line-height:1.05;
+  margin-bottom:2rem;
+}
+.title-line{display:block;margin-bottom:.8rem}
+.word{
+  display:inline-block;
+  margin-right:.25em;
+  position:relative;
+  opacity:0;
+  transform:translate3d(0,100px,0) scale(.9) rotate(4deg);
+}
+.word.cyan{color:var(--bright-cyan)}
+.word.green{color:var(--bright-green)}
+.hero-subtitle{
+  font-size:clamp(1rem,2vw,1.3rem);
+  color:rgba(255,255,255,.9);
+  max-width:900px;
+  margin:1.5rem auto 0;
+  line-height:1.9;
+  opacity:0;
+  font-weight:400;
+}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- jQuery UI CSS -->
-    <link rel="stylesheet" href="css/jquery-ui.min.css">
-    <!-- MeanMenu CSS (for mobile navigation) -->
-    <link rel="stylesheet" href="css/meanmenu.min.css">
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- Custom Video CSS -->
-    <link href="css/video-js.css" rel="stylesheet">
-    <!-- Main Site Styles -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Responsive Design CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- Modernizr JavaScript for Feature Detection -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-    <!-- Google Font: Poppins -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="custom.css">
+/* ========== FILTER ========== */
+.filter-section{
+  padding:2.5rem 4rem;
+  text-align:center;
+  background:var(--navy);
+}
+.filter-tabs{
+  display:flex;
+  gap:1rem;
+  justify-content:center;
+  flex-wrap:wrap;
+  max-width:1200px;
+  margin:0 auto;
+}
+.filter-btn{
+  background:rgba(0,212,255,.1);
+  border:1px solid rgba(0,212,255,.3);
+  color:var(--white);
+  padding:.8rem 1.6rem;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:.9rem;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  transition:.3s;
+  font-family:'Sora',sans-serif;
+}
+.filter-btn:hover,
+.filter-btn.active{
+  background:var(--bright-cyan);
+  color:var(--deep-navy);
+  border-color:var(--bright-cyan);
+  transform:scale(1.05);
+}
+
+/* ========== PORTFOLIO GRID ========== */
+.portfolio-section{
+  padding:5rem 2rem;
+  background:var(--deep-navy);
+}
+.section-label{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--orange),var(--yellow));
+  color:var(--deep-navy);
+  padding:.8rem 1.8rem;
+  border-radius:999px;
+  font-size:.85rem;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin-bottom:1.5rem;
+}
+.section-title{
+  font-size:clamp(2.5rem,6vw,4.5rem);
+  font-weight:600;
+  margin-bottom:.8rem;
+  text-align:center;
+  line-height:1.1;
+}
+.section-subtitle{
+  font-size:1.2rem;
+  color:rgba(255,255,255,.85);
+  text-align:center;
+  max-width:900px;
+  margin:0 auto 4rem;
+  font-weight:400;
+  line-height:1.8;
+}
+
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+  gap:2.5rem;
+  max-width:1700px;
+  margin:0 auto;
+}
+.portfolio-card{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(0,212,255,.15);
+  transition:.45s;
+  opacity:0;
+  transform:translateY(50px);
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+.portfolio-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(0,212,255,.2) 0%,rgba(255,107,53,.2) 100%);
+  opacity:0;
+  transition:.45s;
+  pointer-events:none;
+  z-index:3;
+}
+.portfolio-card:hover{
+  border-color:rgba(0,212,255,.4);
+  transform:translateY(-15px);
+  box-shadow:0 25px 70px rgba(0,212,255,.25);
+}
+.portfolio-card:hover::before{opacity:1}
+.portfolio-image{
+  width:100%;
+  height:300px;
+  overflow:hidden;
+  position:relative;
+  background:var(--navy);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+.portfolio-image::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,29,61,.4) 100%);
+  z-index:2;
+  pointer-events:none;
+}
+.portfolio-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .6s;
+  position:relative;
+  z-index:1;
+}
+.portfolio-card:hover .portfolio-image img{transform:scale(1.1)}
+.portfolio-info{
+  padding:2.5rem;
+  position:relative;
+  z-index:2;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  background:linear-gradient(180deg,rgba(0,29,61,.3) 0%,rgba(0,29,61,.85) 100%);
+}
+.portfolio-category{
+  font-size:.8rem;
+  color:var(--bright-green);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-weight:700;
+  margin-bottom:1rem;
+  display:inline-block;
+  background:rgba(0,255,136,.12);
+  padding:.5rem 1rem;
+  border-radius:999px;
+  width:fit-content;
+}
+.portfolio-title{
+  font-size:1.6rem;
+  font-weight:700;
+  margin-bottom:1rem;
+  color:var(--white);
+  line-height:1.2;
+}
+.portfolio-description{
+  font-size:.95rem;
+  color:rgba(255,255,255,.8);
+  line-height:1.7;
+}
+
+/* ========== DETAIL SECTIONS ========== */
+.detail-section{
+  padding:6rem 2rem;
+  background:var(--navy);
+  display:none;
+  opacity:0;
+  border-top:2px solid rgba(0,212,255,.2);
+}
+.detail-section.active{
+  display:block;
+  animation:revealDetail .8s ease forwards;
+}
+@keyframes revealDetail{to{opacity:1}}
+
+.detail-container{
+  max-width:1400px;
+  margin:0 auto;
+}
+.detail-header{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:4rem;
+  align-items:start;
+  margin-bottom:4rem;
+}
+
+.detail-images{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+}
+.detail-img-main{
+  width:100%;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+  height:500px;
+}
+.detail-img-main img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.detail-imgs-small{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+  margin-top:2rem;
+}
+.detail-img-small{
+  width:100%;
+  height:280px;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+.detail-img-small img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.detail-content h2{
+  font-size:clamp(2.2rem,4vw,3.5rem);
+  font-weight:700;
+  margin-bottom:1.5rem;
+  line-height:1.2;
+  color:var(--white);
+}
+.detail-client{
+  color:var(--bright-cyan);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin-bottom:2rem;
+  font-size:.9rem;
+  display:inline-block;
+  background:rgba(0,212,255,.15);
+  padding:.8rem 1.8rem;
+  border-radius:999px;
+  border:1px solid rgba(0,212,255,.3);
+}
+
+.detail-boxes{margin-top:3rem}
+.detail-box{
+  margin-bottom:2.5rem;
+  padding:2rem;
+  background:rgba(0,212,255,.08);
+  border:1px solid rgba(0,212,255,.2);
+  border-radius:14px;
+  transition:.3s;
+}
+.detail-box:hover{
+  background:rgba(0,212,255,.12);
+  border-color:rgba(0,212,255,.4);
+}
+.detail-box-label{
+  color:var(--bright-green);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin-bottom:1rem;
+  font-size:.95rem;
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+}
+.detail-box-label::before{
+  content:'→';
+  font-size:1.3rem;
+  color:var(--bright-cyan);
+}
+.detail-box-text{
+  font-size:1.05rem;
+  line-height:1.85;
+  color:rgba(255,255,255,.85);
+}
+
+.detail-stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:2rem;
+  margin-top:3rem;
+  padding-top:3rem;
+  border-top:1px solid rgba(0,212,255,.15);
+}
+.detail-stat{
+  background:rgba(0,212,255,.1);
+  border:1px solid rgba(0,212,255,.2);
+  padding:2rem;
+  border-radius:14px;
+  text-align:center;
+  transition:.3s;
+}
+.detail-stat:hover{
+  background:rgba(0,212,255,.15);
+  border-color:rgba(0,212,255,.4);
+  transform:translateY(-5px);
+}
+.detail-stat-number{
+  font-size:2.2rem;
+  font-weight:700;
+  color:var(--bright-cyan);
+  margin-bottom:.6rem;
+}
+.detail-stat-label{
+  font-size:.85rem;
+  color:rgba(255,255,255,.7);
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  font-weight:600;
+}
+
+/* ========== CTA ========== */
+.cta-section{
+  padding:8rem 4rem;
+  text-align:center;
+  background:linear-gradient(135deg,var(--bright-cyan),var(--orange));
+  position:relative;
+  overflow:hidden;
+}
+.cta-section::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 20% 80%,rgba(255,107,53,.3),transparent);
+  pointer-events:none;
+}
+.cta-title{
+  font-size:clamp(2.5rem,7vw,5rem);
+  font-weight:700;
+  margin-bottom:1.5rem;
+  color:var(--deep-navy);
+  position:relative;
+  z-index:2;
+  line-height:1.1;
+}
+.cta-subtitle{
+  font-size:1.5rem;
+  margin-bottom:2.5rem;
+  opacity:.95;
+  color:var(--deep-navy);
+  font-weight:500;
+  position:relative;
+  z-index:2;
+}
+.btn-primary{
+  background:var(--deep-navy);
+  color:var(--bright-cyan);
+  padding:1.3rem 3.2rem;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:1.1rem;
+  display:inline-flex;
+  align-items:center;
+  gap:.8rem;
+  box-shadow:0 15px 50px rgba(0,0,0,.3);
+  transition:.3s;
+  border:none;
+  cursor:pointer;
+  position:relative;
+  z-index:2;
+}
+.btn-primary:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+/* ========== SCROLL TOP ========== */
+.scroll-top{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  z-index:9000;
+  display:grid;
+  place-items:center;
+  cursor:pointer;
+  background:conic-gradient(var(--bright-cyan) calc(var(--scroll,0)*1%),rgba(0,212,255,.15) 0);
+  box-shadow:0 12px 40px rgba(0,212,255,.4),inset 0 0 0 8px rgba(0,29,61,.6);
+  transform:scale(.85);
+  opacity:0;
+  pointer-events:none;
+  transition:.3s ease;
+  border:none;
+}
+.scroll-top.visible{
+  opacity:1;
+  pointer-events:auto;
+  transform:scale(1);
+}
+.scroll-top .inner{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:var(--navy);
+  color:#fff;
+  font-weight:700;
+}
+.scroll-top .pct{font-size:.9rem}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width:1200px){
+  .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+  .detail-header{grid-template-columns:1fr}
+}
+
+@media (max-width:768px){
+  body{cursor:default}
+  .cursor,.cursor-follower{display:none}
+  
+  .hero{padding:8rem 2rem 4rem}
+  .portfolio-section{padding:3rem 1.5rem}
+  .portfolio-grid{grid-template-columns:1fr;gap:1.5rem}
+  .portfolio-image{height:240px}
+  
+  .detail-section{padding:4rem 1.5rem}
+  .detail-header{gap:2rem}
+  .detail-img-main{height:300px}
+  .detail-boxes{margin-top:2rem}
+  .detail-box{padding:1.5rem;margin-bottom:1.5rem}
+  .detail-stats{
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:1.5rem;
+    margin-top:2rem;
+    padding-top:2rem;
+  }
+  
+  .cta-section{padding:4rem 2rem}
+}
+</style>
 </head>
-
 <body>
-<a class="bgOrange" href="javascript:" id="return-to-top"><i class="fa fa-angle-up"></i></a>
-<!-- preloader Start -->
-<div id="preloader">
-<div id="status"><img src="images/banner/loader.gif" id="preloader_image" alt="loader">
-</div>
-</div>
-<!--Header area start here-->
-<div section-scroll='0' class="wd_scroll_wrap">
-<header class="gc_main_menu_wrapper">
-<div class="container-fluid">
-<div class="row">
-<div class="col-lg-3 col-md-3 col-sm-12 col-xs-6">
-<div class="logo-area">
-<a href="index.html"><h2 style="font-family:cursive; color:white;"><center>PHENOM<span class="orange">net</span></center></h2><!-- <img src="images/logo/logo.png" alt="logo" /> --></a>
-</div>
-</div>
-<!-- Mobile Menu  Start -->
-<div class="col-lg-9 col-md-9 col-sm-12 col-xs-6">
-<div class="menu-area  hidden-xs">
-<nav class="wd_single_index_menu btc_main_menu">
-    <ul>
-       <li><a href="0">Home</a></li>
-            <li><a href="1">About</a></li>
-            <li><a href="2">Features</a></li>
-           <!-- <li><a href="3">Project</a></li>  -->
-      <!-- <li><a href="4">Steps</a></li> -->
-            <!-- <li><a href="5">Road Map</a></li>
-            <li><a href="6">Investments</a></li>
-            <li><a href="7">Testimonial</a></li>
-            <li><img src="images/icons/12.png" alt=""/></li> -->
-    </ul>
-</nav>
-<div class="language">
-    <span class="lng-in">
-        <a class="btn btn-warning text-white" href="tel:+23400phenonet"><big><strong><i class="fa fa-phone" title="Call us"></i></strong></big></a>
-        
-    </span>
-    <!-- <ul class="lng-out">
-        <li><img src="images/icons/12.png" alt="" /></li>
-        <li><img src="images/icons/12.png" alt="" /></li>
-    </ul> -->
-</div>
-<div class="login-btn">
-    <a href="user/register.php" class="btn1 bgOrange"><i class="fa fa-user"></i><span>Register</span></a>
-</div>
-</div>
-<!-- mobile menu area start -->
-<div class="rp_mobail_menu_main_wrapper visible-xs">
-<div class="row">
-    <div class="col-xs-12">
-        <div id="toggle">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 31.177 31.177" style="enable-background:new 0 0 31.177 31.177;" xml:space="preserve" width="25px" height="25px">
-                <g>
-                    <g>
-                        <path class="menubar" d="M30.23,1.775H0.946c-0.489,0-0.887-0.398-0.887-0.888S0.457,0,0.946,0H30.23    c0.49,0,0.888,0.398,0.888,0.888S30.72,1.775,30.23,1.775z" fill="#fff" />
-                    </g>
-                    <g>
-                        <path class="menubar" d="M30.23,9.126H12.069c-0.49,0-0.888-0.398-0.888-0.888c0-0.49,0.398-0.888,0.888-0.888H30.23    c0.49,0,0.888,0.397,0.888,0.888C31.118,8.729,30.72,9.126,30.23,9.126z" fill="#fff" />
-                    </g>
-                    <g>
-                        <path class="menubar" d="M30.23,16.477H0.946c-0.489,0-0.887-0.398-0.887-0.888c0-0.49,0.398-0.888,0.887-0.888H30.23    c0.49,0,0.888,0.397,0.888,0.888C31.118,16.079,30.72,16.477,30.23,16.477z" fill="#fff" />
-                    </g>
-                    <g>
-                        <path class="menubar" d="M30.23,23.826H12.069c-0.49,0-0.888-0.396-0.888-0.887c0-0.49,0.398-0.888,0.888-0.888H30.23    c0.49,0,0.888,0.397,0.888,0.888C31.118,23.43,30.72,23.826,30.23,23.826z" fill="#fff" />
-                    </g>
-                    <g>
-                        <path class="menubar" d="M30.23,31.177H0.946c-0.489,0-0.887-0.396-0.887-0.887c0-0.49,0.398-0.888,0.887-0.888H30.23    c0.49,0,0.888,0.398,0.888,0.888C31.118,30.78,30.72,31.177,30.23,31.177z" fill="#fff" />
-                    </g>
-                </g>
-            </svg>
-        </div>
-    </div>
-</div>
-<div id="sidebar">
-    <h1><a class="cursive" href="#">Phenom<span class="orange">net</span></a></h1>
-    <div id="toggle_close">&times;</div>
-    <div id='cssmenu' class="wd_single_index_menu">
-        <ul>
-            <li><a href="0">Home</a></li>
-            <li><a href="1">About</a></li>
-            <li><a href="2">Features</a></li>
-            <li><a href="3">Project</a></li>
-      <!-- <li><a href="4">Steps</a></li> -->
-            <!-- <li><a href="5">Road Map</a></li>
-            <li><a href="6">Investments</a></li>
-            <li><a href="7">Testimonial</a></li>
-             <li><a href="tel:+447418343730">Contact us&nbsp;<i class="fa fa-phone"></i></a></li> -->
-        </ul>
-    </div>
-</div>
-</div>
-<!-- Mobile Menu  End -->
-</div>
-</div>
-</div>
-</header>
-<!--Header area end here-->
-<!--Slider area start here-->
-<section class="slider-area">
-<canvas>
-<script src="js/three.js"></script>
-<script src="js/stats.min.js"></script>
-<script src="js/Projector.js"></script>
-<script src="js/CanvasRenderer.js"></script>
-</canvas>
-<div id="particles-js">
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-<div class="carousel-inner" role="listbox">
-<div class="item active">
-<div class="carousel-captions caption-1">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="slider-content">
-                    <ul>
-                        <li data-animation="animated bounceInDown" class="slider_social_icon1"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li data-animation="animated bounceInDown" class="slider_social_icon2"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li data-animation="animated bounceInDown" class="slider_social_icon3"><a href="#"><i class="fa fa-send-o"></i></a></li>
-                       <!--  <li data-animation="animated bounceInDown" class="slider_social_icon4"><a href="#"><i class="fa fa-bitcoin"></i></a></li> -->
-                        <li data-animation="animated bounceInDown" class="slider_social_icon5"><a href="#"><i class="fa fa-envelope"></i></a></li>
-                        <li data-animation="animated bounceInDown" class="slider_social_icon4"><a href="tel:+2349160392656"><i class="fa fa-phone"></i></a></li>
-                    </ul>
-                    <h2 data-animation="animated bounceInLeft">PHENOM <span class="orange">net</span> -<br>Biggest  Money making Platform</h2>
-                    <div class="buttons">
-                        <a href="register.php" class="btn1 bgOrange" data-animation="animated bounceInUp">START NOW</a>
-                        <a href="docs/about.php" class="btn2 bgOrange" data-animation="animated bounceInUp">LEARN MORE</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hidden-xs hidden-sm">
-                <div>
-                    <img src="images/about/mobile-dark.png" width="100%" />
-                </div>
-                <div class="btc_timer_section_wrapper" hidden>
-                     <div id="clockdiv">
-                        <div>
-                            <span class="days"></span>
-                            <div class="smalltext"></div>
-                        </div>
-                        <div>
-                            <span class="hours"></span>
-                            <div class="smalltext"></div>
-                        </div>
-                        <div>
-                            <span class="minutes"></span>
-                            <div class="smalltext"></div>
-                        </div>
-                        <div>
-                            <span class="seconds"></span>
-                            <div class="smalltext"></div>
-                        </div>
-                    </div> 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<div class="item">
-<div class="container">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="slider-content">
-                <ul>
-                    <li data-animation="animated bounceInDown" class="slider_social_icon1"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li data-animation="animated bounceInDown" class="slider_social_icon2"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li data-animation="animated bounceInDown" class="slider_social_icon3"><a href="#"><i class="fa fa-send-o"></i></a></li>
-                    <!-- <li data-animation="animated bounceInDown" class="slider_social_icon4"><a href="#"><i class="fa fa-bitcoin"></i></a></li> -->
-                    <li data-animation="animated bounceInDown" class="slider_social_icon5"><a href="mailto:support@phenomnet.com.ng"><i class="fa fa-envelope"></i></a></li>
-                     <li data-animation="animated bounceInDown" class="slider_social_icon4"><a href="tel:+447418343730"><i class="fa fa-phone"></i></a></li>
-                </ul>
-                <h2 data-animation="animated bounceInLeft">PHENOM <span class="orange">net</span> - <br>Biggest Trading Plans</h2>
-                <div class="buttons">
-                    <a href="user/register.php" class="btn1 bgOrange" data-animation="animated bounceInUp">START NOW</a>
-                    <a href="docs/about.php" class="btn2 bgOrange" data-animation="animated bounceInUp">LEARN MORE</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12  hidden-xs hidden-sm">
-           <div>
-                    <img src="images/about/mobile-dark2.png" width="100%" />
-                </div>
-            <div class="btc_timer_section_wrapper" hidden>
-                <div id="clockdiv2">
-                    <div>
-                        <span class="days"></span>
-                        <div class="smalltext"></div>
-                    </div>
-                    <div>
-                        <span class="hours"></span>
-                        <div class="smalltext"></div>
-                    </div>
-                    <div>
-                        <span class="minutes"></span>
-                        <div class="smalltext"></div>
-                    </div>
-                    <div>
-                        <span class="seconds"></span>
-                        <div class="smalltext"></div>
-                    </div> 
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<div class="carousel-nevigation">
-<a class="prev bgOrange" href="#carousel-example-generic" role="button" data-slide="prev">
-    <i class="fa fa-angle-left"></i>
-</a>
-<a class="next bgOrange" href="#carousel-example-generic" role="button" data-slide="next">
-    <i class="fa fa-angle-right"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!--Slider area end here-->
-<section class="currency-area">
-<div class="container-fliud">
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="rete-list bt_title wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
-<div class="content">
-    <div class="con">
-        <h2 style="font-size:50px !important; color:#FFAB00 !important;"><span></span>28M+</h2>
-        <span class="lead" style="color:#fff !important;">Total Asset</span> 
-    </div>
-</div>
-</div>
-<div class="rete-list bt_title wow  fadeInUp animated" data-wow-duration="1.3s" style="visibility: visible; animation-duration: 1.3s; animation-name: fadeInUp;">
-<div class="content">
-    <div class="con">
-       <h2 style="font-size:50px !important; color:#FFAB00 !important;"><span>2000+</span></h2>
-        <span class="lead" style="color:#fff !important;">members</span> 
-    </div>
-</div>
-</div>
-<div class="rete-list bt_title wow  fadeInUp animated" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp;">
-<div class="content">
-    <!--<div class="con">-->
-    <!--   <h2 style="font-size:50px !important; color:#FFAB00 !important;"><span>840+</span></h2>-->
-    <!--    <span class="lead" style="color:#fff !important;">Qualified Traders</span> -->
-    <!--</div>-->
-</div>
-</div>
-<div class="rete-list bt_title wow  fadeInUp animated" data-wow-duration="1.9s" style="visibility: visible; animation-duration: 1.9s; animation-name: fadeInUp;">
-<div class="content">
-    <div class="con">
-        <h2 style="font-size:50px !important; color:#FFAB00 !important;"><span>3+</span></h2>
-        <span class="lead" style="color:#fff !important;">Countries Supported</span> 
-    </div>
-</div>
-</div>
-<div class="rete-list hidden-md   wow  fadeInUp animated" data-wow-duration="2.1s" style="visibility: visible; animation-duration: 2.1s; animation-name: fadeInUp;">
-<div class="content">
-    <div class="con">
-       <h2 style="font-size:50px !important; color:#FFAB00 !important;"><span>24/7</span></h2>
-        <span class="lead" style="color:#fff !important;">Support Availability</span>
-    </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>
-<!--About area start here-->
-<div section-scroll='1' class="wd_scroll_wrap">
-<section class="about-area pd-t70 pd-b100 jarallax bg-img">
-<div class="container">
-<div class="row">
-<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-<div class="about-content">
-<h2 class="f-40 fw-400 wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">About Phenomnet <span class="orange">Trade</span></h2>
-<p class="wow  fadeInUp animated" data-wow-duration="1.3s" style="visibility: visible; animation-duration: 1.3s; animation-name: fadeInUp;">PHENOM is a diverse, inclusive, and globally integrated system designed to connect you with limitless access to extensive financial opportunities and aesthetics. Its mission is to create and foster a wide range of ambitions and aspirations for users worldwide.</p>
-<p class="wow  fadeInUp animated" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp;"> Here we offer you the opportunity to mine cryptocurrencies directly from your mobile phone and access cutting-edge digital courses</p>
-<p class="wow  fadeInUp animated" data-wow-duration="1.9s" style="visibility: visible; animation-duration: 1.9s; animation-name: fadeInUp;">Our platform enables you to monetize your social media accounts for passive income, while our advanced earning models provide daily rewards, enhancing your financial potential, Join us as your home and pathway to financial freedom, where we empower you to embrace a life of abundance and opportunity.</p>
-<div class="buttons">
-    <a href="docs/about.php" class="btn1 bgOrange">READ MORE</a>
-    <a href="user/register.php" class="btn3 bgOrange">GET STARTED</a>
-</div>
-</div>
-</div>
-<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-<div class="about-img wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
-<img src="images/about/buybitcoin.png" alt="" />
-</div>
-</div>
-</div>
-</div>
-</section>
-<!--About area end here-->
-<div class="sud">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 181.1" style="enable-background:new 0 0 1920 181.1;" xml:space="preserve">
-<style type="text/css">
-.st0 {
-fill-rule: evenodd;
-clip-rule: evenodd;
-fill: #10122d;
-}
-</style>
-<g>
-<path class="st0" d="M0,80c0,0,28.9-4.2,43-13c14.3-9,71-35.7,137,5c17.3,7.7,33.3,13,48,11c17.3,0.3,50.3,4.7,66,23
-c20.3,9.7,68,40.3,134-12c24-11,59-16.3,104,2c21,7.3,85,27.7,117-14c24-30.7,62.7-55,141-12c26,10.3,72,14.7,110-14
-c37.7-19,89.7-29,122,53c23,32.7,47.7,66.3,97,26c24-22.7,51-78.3,137-38c0,0,28.3,15.7,52,15c23.7-0.7,50.7,4.3,76,41
-c19.7,19.7,71,36.7,121-2c0,0,22.3-16,55-12c0,0,32.7,6.7,56-71c23.3-76,79-92,122-29c9.3,13.7,25,42,62,43c37,1,51.7,25.3,67,48
-c15.3,22.7,51,22.7,53,23v28.1H0V80z" />
-</g>
-</svg>
-</div>
-</div>
-<div section-scroll='2' class="wd_scroll_wrap">
-<section class="features-area section">
-<div id="features-js">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="section-heading2 wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
-    <h2>Trading Features</h2>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="featured-lists">
-    <ul>
-        <li>
-            <div class="col-sm-6 pd-0 hidden-xs wow  fadeInUp animated" data-wow-duration="1.3s" style="visibility: visible; animation-duration: 1.3s; animation-name: fadeInUp;">
-                <div class="contents-l mr-b30">
-                    <h2>Lending</h2>
-                    <p>Unique platform for lending and investment with a safety fund
-                        <br>and cooperation with world-wide arbitration.</p>
-                   <a href="docs/about.php" class="btn1 bgOrange">Read More</a>
-                </div>
-            </div>
-            <div class="col-sm-6 pd-0 wow  fadeInUp animated" data-wow-duration="1.3s" style="visibility: visible; animation-duration: 1.3s; animation-name: fadeInUp;">
-                <div class="imgs-l">
-                    <figure><img src="images/features/1.png" alt="" /></figure>
-                </div>
-            </div>
-            <div class="col-sm-6 pd-0 visible-xs  wow  fadeInUp animated" data-wow-duration="1.3s" style="visibility: visible; animation-duration: 1.3s; animation-name: fadeInUp;">
-                <div class="contents-l mr-b30">
-                    <h2>COUPON</h2>
-                    <p>Purchase coupon code from our vendor.
-                        <br>Kindly contact our vendor if you are a Nigerian </p>
-                    <a href="docs/about.php" class="btn1 bgOrange">Read More</a>
-                </div>
-            </div>
-        </li>
-        <li class="rl">
-            <div class="col-sm-6 pd-0 floatright mr-b30 hidden-xs wow  fadeInUp animated" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp;">
-                <div class="contents-r">
-                    <h2>register</h2>
-                    <p>Use the coupon you get to complete your registration
-                        <br>Instant registration with coupon code</p>
-                     <a href="user/register.php" class="btn1 bgOrange">Become a Member</a>
-                </div>
-            </div>
-            <div class="col-sm-6 pd-0 wow  fadeInUp animated" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp;">
-                <div class="imgs-r">
-                    <figure><img src="images/features/2.png" alt="" /></figure>
-                </div>
-            </div>
-            <div class="col-sm-6 pd-0 floatright mr-b30 visible-xs wow  fadeInUp animated" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp;">
-                <div class="contents-r">
-                    <h2>Exchange Money</h2>
-                    <p>Exchange between all popular currencies with a couple of clicks.
-                        <br>Instant send from one currency to another.</p>
-                    <a href="user/register.php" class="btn1 bgOrange">Become a Member</a>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="col-sm-6 pd-0 hidden-xs wow  fadeInUp animated" data-wow-duration="1.9s" style="visibility: visible; animation-duration: 1.9s; animation-name: fadeInUp;">
-                <div class="contents-l mr-b30">
-                    <h2>Make money</h2>
-                    <p> After registration, you have your account up to you.
-                        <br>Seriousness determines</p>
-                     <a href="#6" class="btn1 bgOrange">Invest Now</a>
-                </div>
-            </div>
-            <div class="col-sm-6 pd-0 wow  fadeInUp animated" data-wow-duration="1.9s" style="visibility: visible; animation-duration: 1.9s; animation-name: fadeInUp;">
-                <div class="imgs-l">
-                    <figure><img src="images/features/3.png" alt="" /></figure>
-                </div>
-            </div>
-            <div class="col-sm-6 pd-0 visible-xs wow  fadeInUp animated" data-wow-duration="1.9s" style="visibility: visible; animation-duration: 1.9s; animation-name: fadeInUp;">
-                <div class="contents-l mr-b30">
-                    <h2>Trading</h2>
-                    <p>Improved  system of investor verification. Providing
-                        <br>verification services for other services.</p>
-                     <a href="#6" class="btn1 bgOrange">Invest Now</a>
-                </div>
-            </div>
-        </li>
-        <li class="rl">
-            <div class="col-sm-6 pd-0 floatright mr-b30 hidden-xs wow  fadeInUp animated" data-wow-duration="2.1s" style="visibility: visible; animation-duration: 2.1s; animation-name: fadeInUp;">
-                <div class="contents-r">
-                    <h2>Withdraw</h2>
-                    <p>Get your money paid into your local account
-                        <br>You get what you worked for.</p>
-                     <a href="user/register.php" class="btn1 bgOrange">Get a Wallet</a>
-                </div>
-            </div>
-            <div class="col-sm-6 pd-0 wow  fadeInUp animated" data-wow-duration="2.1s" style="visibility: visible; animation-duration: 2.1s; animation-name: fadeInUp;">
-                <div class="imgs-r">
-                    <figure><img src="images/features/4.png" alt="" /></figure>
-                </div>
-            </div>
-            <div class="col-sm-6 pd-0 floatright mr-b30 visible-xs wow  fadeInUp animated" data-wow-duration="2.1s" style="visibility: visible; animation-duration: 2.1s; animation-name: fadeInUp;">
-                <div class="contents-r">
-                    <h2>Withdraw</h2>
-                    <p>Get your money paid into your local account
-                        <br>You get what you worked for.</p>
-                     <a href="user/register.php" class="btn1 bgOrange">Get a Wallet</a>
-                </div>
-            </div>
-        </li>
-    </ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>
-<!-- <div section-scroll='3' class="wd_scroll_wrap">
-<section class="projects bg-img pd-t100 pd-b70 jarallax">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-<div class="section-heading">
-<h2 class="wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">The Most Trusted Cryptocurrency Trading Platform</h2>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-<div class="project-list wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
-<div class="content">
-    <span class="icons"><img src="images/icons/6.png" alt=""/></span>
-    <h3>Blockchain <br>Technology</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-<div class="project-list wow  fadeInUp animated" data-wow-duration="1.3s" style="visibility: visible; animation-duration: 1.3s; animation-name: fadeInUp;">
-<div class="content">
-    <span class="icons"><img src="images/icons/7.png" alt=""/></span>
-    <h3>Advanced <br>Security System</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-<div class="project-list wow  fadeInUp animated" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp;">
-<div class="content">
-    <span class="icons"><img src="images/icons/8.png" alt=""/></span>
-    <h3>Multicurrency <br>Coins</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-<div class="project-list wow  fadeInUp animated" data-wow-duration="1.9s" style="visibility: visible; animation-duration: 1.9s; animation-name: fadeInUp;">
-<div class="content">
-    <span class="icons"><img src="images/icons/9.png" alt=""/></span>
-    <h3>Internal <br>Exchange</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-<div class="project-list wow  fadeInUp animated" data-wow-duration="2.1s" style="visibility: visible; animation-duration: 2.1s; animation-name: fadeInUp;">
-<div class="content">
-    <span class="icons"><img src="images/icons/10.png" alt=""/></span>
-    <h3>Safety <br>Fund</h3>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-<div class="project-list wow  fadeInUp animated" data-wow-duration="2.4s" style="visibility: visible; animation-duration: 2.4s; animation-name: fadeInUp;">
-<div class="content">
-    <span class="icons"><img src="images/icons/11.png" alt=""/></span>
-    <h3>Cooperation <br>With Arbitration</h3>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>
-<div section-scroll='4' class="wd_scroll_wrap">
-<div class="sud">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 181.1" style="enable-background:new 0 0 1920 181.1;" xml:space="preserve">
-<style type="text/css">
-.st0 {
-fill-rule: evenodd;
-clip-rule: evenodd;
-fill: #10122d;
-}
-</style>
-<g>
-<path class="st0" d="M0,80c0,0,28.9-4.2,43-13c14.3-9,71-35.7,137,5c17.3,7.7,33.3,13,48,11c17.3,0.3,50.3,4.7,66,23
-c20.3,9.7,68,40.3,134-12c24-11,59-16.3,104,2c21,7.3,85,27.7,117-14c24-30.7,62.7-55,141-12c26,10.3,72,14.7,110-14
-c37.7-19,89.7-29,122,53c23,32.7,47.7,66.3,97,26c24-22.7,51-78.3,137-38c0,0,28.3,15.7,52,15c23.7-0.7,50.7,4.3,76,41
-c19.7,19.7,71,36.7,121-2c0,0,22.3-16,55-12c0,0,32.7,6.7,56-71c23.3-76,79-92,122-29c9.3,13.7,25,42,62,43c37,1,51.7,25.3,67,48
-c15.3,22.7,51,22.7,53,23v28.1H0V80z" />
-</g>
-</svg>
-</div>
-</div>
-<div section-scroll='5' class="wd_scroll_wrap">
-<section class="video-area section">
-<div id="video-js">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="videos-heding">
-    <h2 class="wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">Development of Phenomnet <span class="orange">Trade</span><br>(Road Map)</h2>
-    <div class="videos-box">
-        <video id="my-video" class="video-js" controls preload="auto" width="770" height="400" poster="images/video/1.png" data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://youtu.be/Gc2en3nHxA4"}], "youtube": { "customVars": { "wmode": "transparent" } } }'>
-        </video>
-    </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<div class="wd_scroll_wrap">
-<section class="video-des bg-img ">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="deslidt">
-    <ul>
-        <li>
-            <span class="years"><span class="con bgOrange">2020</span></span>
-            <div class="serials">
-                <span class="cre"></span>
-                <div class="col-sm-6 col-xs-12 left-con wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
-                    <div class="box-con">
-                        <div class="dbox">
-                            <div class="dleft">
-                                <div class="imgs"><img src="images/video/2.png" alt="" /></div>
-                            </div>
-                            <div class="dright">
-                                <div class="content">
-                                    <h3>Idea</h3>
-                                    <p>(September - October)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xs-12 right-con  wow  fadeInUp animated" data-wow-duration="1.3s" style="visibility: visible; animation-duration: 1.3s; animation-name: fadeInUp;">
-                    <div class="box-con">
-                        <div class="dbox">
-                            <div class="dleft">
-                                <div class="content">
-                                    <h3>Market Research</h3>
-                                    <p>(October - December)</p>
-                                </div>
-                            </div>
-                            <div class="dright">
-                                <div class="imgs"><img src="images/video/3.png" alt="" /></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <span class="years"><span class="con bgOrange">2021</span></span>
-            <div class="serials">
-                <span class="cre"></span>
-                <div class="col-sm-6 col-xs-12 left-con wow  fadeInUp animated" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp;">
-                    <div class="box-con">
-                        <div class="dbox">
-                            <div class="dleft">
-                                <div class="imgs"><img src="images/video/3.png" alt="" /></div>
-                            </div>
-                            <div class="dright">
-                                <div class="content">
-                                    <p>(Q1 2021)</p>
-                                    <h3>Formation of foundersteam Business plan</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xs-12 right-con wow  fadeInUp animated" data-wow-duration="1.9s" style="visibility: visible; animation-duration: 1.9s; animation-name: fadeInUp;">
-                    <div class="box-con">
-                        <div class="dbox">
-                            <div class="dleft">
-                                <div class="content">
-                                    <p>(Q2 2021)</p>
-                                    <h3>Start of Platform<br> Development</h3>
-                                </div>
-                            </div>
-                            <div class="dright">
-                                <div class="imgs"><img src="images/video/4.png" alt="" /></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="serials">
-                <span class="cre"></span>
-                <div class="col-sm-6 col-xs-12 left-con wow  fadeInUp animated" data-wow-duration="2.1s" style="visibility: visible; animation-duration: 2.1s; animation-name: fadeInUp;">
-                    <div class="box-con">
-                        <div class="dbox">
-                            <div class="dleft">
-                                <div class="imgs"><img src="images/video/5.png" alt="" /></div>
-                            </div>
-                            <div class="dright">
-                                <div class="content">
-                                    <p>(Q3 2021)</p>
-                                    <h3>WhitePaper<br> Landing page</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xs-12 right-con wow  fadeInUp animated" data-wow-duration="2.1s" style="visibility: visible; animation-duration: 2.1s; animation-name: fadeInUp;">
-                    <div class="box-con">
-                        <div class="dbox">
-                            <div class="dleft">
-                                <div class="content">
-                                    <p>(Q4 2021)</p>
-                                    <h3>Pre-Sale<br>Launch Platform<br>in beta test mode</h3>
-                                </div>
-                            </div>
-                            <div class="dright">
-                                <div class="imgs"><img src="images/video/6.png" alt="" /></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <span class="years"><span class="con bgOrange">2022</span></span>
-            <div class="serials">
-                <span class="cre"></span>
-                <div class="col-sm-6 col-xs-12 left-con  wow  fadeInUp animated" data-wow-duration="2.3s" style="visibility: visible; animation-duration: 2.3s; animation-name: fadeInUp;">
-                    <div class="box-con">
-                        <div class="dbox">
-                            <div class="dleft">
-                                <div class="imgs"><img src="images/video/7.png" alt="" /></div>
-                            </div>
-                            <div class="dright">
-                                <div class="content">
-                                    <p>(Q1 2022)</p>
-                                    <h3>ICO Launch<br>Identification<br>Systemsand work<br>with API Partners</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-xs-12 right-con wow  fadeInUp animated" data-wow-duration="2.3s" style="visibility: visible; animation-duration: 2.3s; animation-name: fadeInUp;">
-                    <div class="box-con">
-                        <div class="dbox">
-                            <div class="dleft">
-                                <div class="content">
-                                    <p>(Q2 2022)</p>
-                                    <h3>Launch the<br>Platform in<br>Full mode</h3>
-                                </div>
-                            </div>
-                            <div class="dright">
-                                <div class="imgs"><img src="images/video/8.png" alt="" /></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="serials">
-                <div class="col-sm-12 col-xs-12 center-con wow  fadeInUp animated" data-wow-duration="2.5s" style="visibility: visible; animation-duration: 2.5s; animation-name: fadeInUp;">
-                    <div class="box-con">
-                        <div class="dbox">
-                            <div class="dleft">
-                                <div class="imgs"><img src="images/video/9.png" alt="" /></div>
-                            </div>
-                            <div class="dright">
-                                <div class="content">
-                                    <p>(Q4 2022)</p>
-                                    <h3>Establishing<br>Representative<br>Office</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-</div>
-</div>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<div class="sud">
-<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 181.1" style="enable-background:new 0 0 1920 181.1;" xml:space="preserve">
-<style type="text/css">
-.st0 {
-fill-rule: evenodd;
-clip-rule: evenodd;
-fill: #10122d;
-}
-</style>
-<g>
-<path class="st0" d="M0,80c0,0,28.9-4.2,43-13c14.3-9,71-35.7,137,5c17.3,7.7,33.3,13,48,11c17.3,0.3,50.3,4.7,66,23
-c20.3,9.7,68,40.3,134-12c24-11,59-16.3,104,2c21,7.3,85,27.7,117-14c24-30.7,62.7-55,141-12c26,10.3,72,14.7,110-14
-c37.7-19,89.7-29,122,53c23,32.7,47.7,66.3,97,26c24-22.7,51-78.3,137-38c0,0,28.3,15.7,52,15c23.7-0.7,50.7,4.3,76,41
-c19.7,19.7,71,36.7,121-2c0,0,22.3-16,55-12c0,0,32.7,6.7,56-71c23.3-76,79-92,122-29c9.3,13.7,25,42,62,43c37,1,51.7,25.3,67,48
-c15.3,22.7,51,22.7,53,23v28.1H0V80z" />
-</g>
-</svg>
-</div>
-</div>
-</div>
-<div section-scroll='6' class="wd_scroll_wrap">
-<section class="tokens-area section">
-<div id="token-js">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="section-heading2">
-    <h2 class="wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">Trading Plans With Guaranteed Profitability<br><small>Phenomnet <span class="orange">Trade</span></small></h2>
-</div>
-</div>
-<div class="col-lg-10 col-md-9 col-sm-12 col-xs-12 col-lg-offset-1 col-md-offset-1">
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right wow  fadeInUp animated" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp;">
-    <div class="tokens mr-r50">
-        <div class="token-name bgOrange">Phenomnet</div>
-        <div class="token-body">
-            <p>Starter Pack</p>
-             <span class="lead bg-secondary">Price $100.00</span>
-            <div class="prices">
-                <h3 class="f-20">Bonus:</h3>
-                <table>
-                    <thead>
-                       <!--  <tr>
-                            <th>Key</th>
-                            <th>Value</th>
-                        </tr> -->
-                    <!-- </thead>
-                    <tbody>
-                        <tr>
-                            <td>Duration</td>
-                            <td>1 month</td>
-                        </tr>
-                        <tr>
-                            <td>Referral </td>
-                            <td>2%</td>
-                        </tr>
-                        <tr>
-                            <td>Harsh Rate</td>
-                            <td>5 Ph/s</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right wow  fadeInUp animated" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp;">
-    <div class="tokens mr-r50">
-        <div class="token-name bgOrange">Phenomnet</div>
-        <div class="token-body">
-            <p>Premium Pack</p>
-             <span class="lead bg-secondary">Price $1,000.00</span>
-            <div class="prices">
-                <h3 class="f-20">Bonus:</h3>
-              <table>
-                    <thead>
-                         <tr>
-                            <th>Key</th>
-                            <th>Value</th>
-                        </tr> -->
-                    <!-- </thead>
-                    <tbody>
-                        <tr>
-                            <td>Duration</td>
-                            <td>3 months</td>
 
-                        </tr>
-                        <tr>
-                            <td>Referral </td>
-                            <td>10%</td>
-                        </tr>
-                        <tr>
-                            <td>Harsh Rate</td>
-                            <td>10 Ph/s</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- Custom Cursor -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
 
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right wow  fadeInUp animated" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp; padding-top:19px !important;">
-    <div class="tokens mr-r50">
-        <div class="token-name bgOrange">Phenomnet</div>
-        <div class="token-body">
-            <p>Gold Pack</p>
-             <span class="lead bg-secondary">Price $10,000.00</span>
-            <div class="prices">
-                <h3 class="f-20">Bonus:</h3>
-                <table>
-                    <thead>
-                       <!--  <tr>
-                            <th>Key</th>
-                            <th>Value</th>
-                        </tr> -->
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Duration</td>
-                            <td>3 month</td>
-                        </tr>
-                        <tr>
-                            <td>Referral </td>
-                            <td>10%</td>
-                        </tr>
-                        <tr>
-                            <td>Harsh Rate</td>
-                            <td>15 Ph/s</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-right wow  fadeInUp animated" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp; padding-top:19px !important;">
-    <div class="tokens mr-r50">
-        <div class="token-name bgOrange">Phenomnet</div>
-        <div class="token-body">
-            <p>Gold Plus</p>
-            <span class="lead bg-secondary">Price $100,000.00</span>
-            <div class="prices">
-                <h3 class="f-20">Bonus:</h3>
-              <table>
-                    <thead> -->
-                        <!-- <tr>
-                            <th>Key</th>
-                            <th>Value</th>
-                        </tr> -->
-                    <!-- </thead>
-                    <tbody>
-                        <tr> -->
-                            <!-- <td>Duration</td>
-                            <td>1 year</td>
+<!-- Global header include -->
+<div data-include="/header.html"></div>
 
-                        </tr>
-                        <tr>
-                            <td>Referral </td>
-                            <td>10%</td>
-                        </tr>
-                        <tr>
-                            <td>Harsh Rate</td>
-                            <td>50 Ph/s</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div> -->
-</div> -->
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center" style="padding-top:19px !important;">
-    <h2 class="h2">Diversify Your Investments Porfolio</h2>
-    <p class="token-con wow  fadeInUp animated" data-wow-duration="1.9s" style="visibility: visible; animation-duration: 1.9s; animation-name: fadeInUp;">
-Phenomnet is fully legit and officially registered company whose activities are regulated by the financial control authorities under the jurisdiction of the United Kingdom. Accepting our terms of coorperation, you can be absolutely sure of getting a guaranteed profit and full return on your investment. </p>
-</div>
-</div>
-</div>
-</div>
-</div> -->
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="floating-shape shape-1" data-parallax="-12"></div>
+  <div class="floating-shape shape-2" data-parallax="14"></div>
+  <div class="hero-content">
+    <div class="hero-title">
+      <div class="title-line"><span class="word">Film &</span></div>
+      <div class="title-line"><span class="word cyan">Entertainment</span></div>
+      <div class="title-line"><span class="word green">Campaigns</span></div>
+    </div>
+    <p class="hero-subtitle">Iconic premieres, blockbuster launches, and culture-moving entertainment campaigns that shape the narrative.</p>
+  </div>
 </section>
-<section class="token-details section bg-img">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="section-heading">
-<h2 class="wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">Frequently Asked Questions</h2>
-<p class="text-white">Turn on Round-up Rules and start saving up effortlessly. Whenever you make a purchase, Goals make it easy to save for the things you want or want to do. There’s no need for spreadsheets or extra apps to budget and track your money.</p>
-</div>
-</div>
-<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-2">
-<div class="tokes-chart-slider wow animate fadeIn" data-wow-duration="1s">
-<div class="cart-list">
-    <div class="chart col-sm-6">
-        <div id="e_chart_3" class="" style="height:0px;"></div>
-        <div class="imgs"><img src="images/icons/l.png" alt="Phenomnet" title="Phenomnet" /><br><span>Phenomnet<br>FAQ</span></div>
-    </div>
-    <div class="col-sm-6">
-        <div class="label-chatrs">
-            <div class="lsits">
-                <span class="clabels-text orange">What is Phenomnet?</span>
-                <p class="text-white">Phenomnet is a registered digital asset investment firm based in the UK. The platform, which includes advanced basic and technical analysis at the source of high return performance, offers high & fixed interest return. </p>
-            </div>
-            <div class="lsits">
-                <span class="clabels-text orange">Guaranteed interest returns, but how?</span>
-                <p class="text-white">We believe that the risk factor should be eliminated for all people who believe that finance will rise on distributed systems. That's why we offer high interest returns to platform investors. With careful and detailed examination of market conditions, daily trading volume, expectations; we change our portfolio distribution and adjust our investment strategy. </p>
-            </div>
-           <!--  <div class="lsits">
-                <span class="clabels-text">Question</span>
-                <p class="text-white">Answer.</p>
-            </div> -->
-        </div>
-    </div>
-</div>
-<div class="cart-list">
-    <div class="chart col-sm-6">
-        <div id="e_chart_2" class="" style="height:0;"></div>
-        <div class="imgs"><img src="images/icons/l.png" alt="Phenomnet" title="Phenomnet" /><br><span>Phenomnet<br>FAQ</span></div>
-    </div>
-    <div class="col-sm-6">
-        <div class="label-chatrs">
-            <div class="lsits">
-                <span class="clabels-text orange">What are digital assets and how are they eveluated?</span>
-                <p class="text-white">Digital assets distributed ledger based electronic means of exchanges. Transactions involving them are secured by cryptography, and they have dedicated servers for verification of transactions and the creation of extra units. </p>
-            </div>
-            <div class="lsits">
-                <span class="clabels-text orange">How can I ask for support?</span>
-                <p class="text-white">We are here to help you with any problems and questions you may encounter while using the platform and during your investment experience. You can always contact through our mail or livechat to turn the situation into an opportunity.</p>
-            </div>
-           <!--  <div class="lsits">
-                <span class="clabels-text">Question</span>
-                <p class="text-white">Answer.</p>
-            </div> -->
-        </div>
-    </div>
-</div>
-</div>
-<div class="contents text-center">
-<h2 class="wow  fadeInUp animated" data-wow-duration="1.3s" style="visibility: visible; animation-duration: 1.3s; animation-name: fadeInUp;">Whenever you make an investment; Goals make it easy to save for the things you want or want to do. There’s no need for spreadsheets or extra apps to budget and track your money.</h2>
-<a href="#" class="btn1 wow  fadeInUp animated bgOrange" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp;">Get Started</a>
-</div>
-</div>
-</div>
-</div>
+
+<!-- ========== FILTER ========== -->
+<section class="filter-section">
+  <div class="filter-tabs">
+    <button class="filter-btn active" data-filter="all">Show all</button>
+    <button class="filter-btn" data-filter="Content Production">Content Production</button>
+    <button class="filter-btn" data-filter="Events">Events</button>
+    <button class="filter-btn" data-filter="PR">PR</button>
+    <button class="filter-btn" data-filter="Reality">Reality</button>
+  </div>
 </section>
-<div class="sud">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 181.1" style="enable-background:new 0 0 1920 181.1;" xml:space="preserve">
-<style type="text/css">
-.st0 {
-fill-rule: evenodd;
-clip-rule: evenodd;
-fill: #10122d;
+
+<!-- ========== PORTFOLIO ========== -->
+<section class="portfolio-section">
+  <div style="text-align:center">
+    <span class="section-label">Featured Campaigns</span>
+    <h2 class="section-title">Film & Entertainment Portfolio</h2>
+    <p class="section-subtitle">Iconic premieres and entertainment campaigns that shaped culture and delivered results.</p>
+  </div>
+  <div class="portfolio-grid" id="portfolioGrid"></div>
+</section>
+
+<!-- ========== DETAILS (ON CARD CLICK) ========== -->
+<div id="detailsContainer"></div>
+
+<!-- ========== CTA ========== -->
+<section class="cta-section">
+  <h2 class="cta-title">Ready for Your Next <span style="color:rgba(0,29,61,.7);">Cultural</span> Moment?</h2>
+  <p class="cta-subtitle">Let's create a campaign that moves culture and delivers results.</p>
+  <a href="mailto:hello@savvymediaafrica.com" class="btn-primary">Start Your Project <i class="fas fa-arrow-right"></i></a>
+</section>
+
+<!-- Global footer include -->
+<div data-include="/footer.html"></div>
+
+<!-- SCROLL TOP BUTTON -->
+<button class="scroll-top" id="scrollTopBtn" aria-label="Back to top">
+  <div class="inner"><span class="pct" id="scrollPct">0%</span></div>
+</button>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const filmProjects = [
+  {
+    id:'aburo',
+    title:'Aburo Premiere',
+    category:'Events',
+    image:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Aburo-Movie-Premiere-.jpg?w=650',
+    img2:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/black-panther.jpg?w=500',
+    img3:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Aburo-Movie-Premiere-.jpg?w=500',
+    client:'Aburo Film',
+    challenge:'Execute a high-profile film premiere that maximizes media coverage and creates memorable audience engagement.',
+    solution:'Orchestrated every detail from guest logistics to red-carpet media coordination. Secured premium media partnerships and curated the guest experience to amplify brand visibility across traditional and digital channels. Managed VIP relations, press interviews, and post-event media coverage.',
+    results:'Flawless execution with industry-wide recognition. Achieved extensive media coverage, premium attendance with A-list celebrities, and established premiere as cultural benchmark for film industry events in West Africa.',
+    achievements:[
+      {label:'Execution',value:'Flawless'},
+      {label:'Coverage',value:'Extensive'},
+      {label:'Attendance',value:'Premium'}
+    ]
+  },
+  {
+    id:'alls-fair',
+    title:"All's Fair in Love",
+    category:'Events',
+    image:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Alls-Fair-In-Love_.jpg?w=650',
+    img2:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Alls-Fair-In-Love_.jpg?w=500',
+    img3:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/avatar.jpg?w=500',
+    client:'Deyemi Okanlawon Films',
+    challenge:'Drive both cultural impact and box office success for a major film release in competitive Nigerian market.',
+    solution:'Comprehensive marketing spanning digital amplification, earned media, influencer partnerships, and strategic PR. Positioned film as cultural event through targeted audience engagement. Coordinated social media campaign with 26M+ reach, influencer previews, and strategic premiere timing.',
+    results:'26M+ social reach achieved, ₦33.6M earned media value, ₦130.2M cinema gross. Film became highest-grossing Nollywood release of the year with strong audience retention and word-of-mouth momentum.',
+    achievements:[
+      {label:'Social Reach',value:'26M+'},
+      {label:'Earned Media',value:'₦33.6M'},
+      {label:'Box Office',value:'₦130.2M'}
+    ]
+  },
+  {
+    id:'bad-boys',
+    title:'Bad Boys: Ride or Die',
+    category:'Events',
+    image:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Bad-Boys-Premiere_1.jpg?w=650',
+    img2:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Bad-Boys-Premiere_1.jpg?w=500',
+    img3:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Alls-Fair-In-Love_.jpg?w=500',
+    client:'Sony Pictures',
+    challenge:'Execute world-class premiere for major studio blockbuster release in West Africa.',
+    solution:'Precision red-carpet coordination with premium media partnerships. Managed star-studded guest logistics, international press coordination, and comprehensive media coverage strategy. Secured partnerships with leading media outlets for live coverage and exclusive interviews.',
+    results:'Premium execution achieved with star-studded attendance including international cast members. Extensive media coverage across all platforms. Film achieved strong box office performance in region with sustained audience interest.',
+    achievements:[
+      {label:'Red Carpet',value:'Premium'},
+      {label:'Media',value:'Extensive'},
+      {label:'Attendance',value:'Star-Studded'}
+    ]
+  },
+  {
+    id:'furiosa',
+    title:'Furiosa Premiere',
+    category:'Content Production',
+    image:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Furiosa-Premiere_1.jpg?w=650',
+    img2:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Furiosa-Premiere_1.jpg?w=500',
+    img3:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Bad-Boys-Premiere_1.jpg?w=500',
+    client:'Warner Bros',
+    challenge:"Create premiere experience matching film's high-impact storytelling and action-packed narrative.",
+    solution:'Immersive event production with thematic creative direction. Designed experience that resonated across audiences and media platforms. Created custom visual installations, coordinated stunt demonstrations, and developed experiential activations reflecting film’s action themes.',
+    results:'High impact execution with explosive engagement across audiences. Massive audience reach with viral social media moments. Event became talking point in entertainment industry with strong sentiment and brand association.',
+    achievements:[
+      {label:'Impact',value:'High'},
+      {label:'Engagement',value:'Explosive'},
+      {label:'Reach',value:'Massive'}
+    ]
+  },
+  {
+    id:'criminal',
+    title:'Criminal Movie Premiere',
+    category:'Content Production',
+    image:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Saving-Onome_.jpg?w=650',
+    img2:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Saving-Onome_.jpg?w=500',
+    img3:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/dark-october.jpg?w=500',
+    client:'Criminal Film',
+    challenge:'Execute secure, sophisticated premiere for exclusive thriller release maintaining high security and exclusivity.',
+    solution:'Meticulous VIP logistics with comprehensive security protocols. Maintained exclusivity while generating significant media coverage. Coordinated private guest lists, security screening, and VIP parking. Managed media access carefully to protect exclusivity while enabling coverage.',
+    results:'Secure execution achieved with flawless VIP management. Professional media coverage captured premium positioning. Premiere established film as exclusive event with strong word-of-mouth among industry insiders.',
+    achievements:[
+      {label:'Execution',value:'Secure'},
+      {label:'Management',value:'Flawless'},
+      {label:'Coverage',value:'Professional'}
+    ]
+  },
+  {
+    id:'avatar',
+    title:'Avatar: The Way of Water',
+    category:'Content Production',
+    image:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/avatar.jpg?w=650',
+    img2:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/avatar.jpg?w=500',
+    img3:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Furiosa-Premiere_1.jpg?w=500',
+    client:'20th Century Studios',
+    challenge:'Translate global blockbuster into locally relevant cultural moment for Nigerian and West African audiences.',
+    solution:"Original content production creating Nigeria's first Avatar-inspired cultural landmark. Commissioned iconic mural installation in Lagos combining global blockbuster themes with local artistic expression. Coordinated unveiling ceremony with artist interviews, community engagement, and media partnerships.",
+    results:'Iconic landmark created becoming major tourist attraction and cultural talking point. Significant media attention across international and local outlets. Strong cultural resonance with positioning as proudly African artistic response to global phenomenon.',
+    achievements:[
+      {label:'Creation',value:'Iconic'},
+      {label:'Reach',value:'Significant'},
+      {label:'Culture',value:'Resonant'}
+    ]
+  },
+  {
+    id:'dark-october',
+    title:'Dark October',
+    category:'PR',
+    image:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/dark-october.jpg?w=650',
+    img2:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/dark-october.jpg?w=500',
+    img3:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Aburo-Movie-Premiere-.jpg?w=500',
+    client:'Linda Ikeji Films',
+    challenge:'Drive comprehensive multi-platform media coverage for thriller film release with strong genre positioning.',
+    solution:'Strategic guest curation including influencers, media personalities, and entertainment journalists. PR management coordinated exclusive interviews, behind-the-scenes content access, and feature opportunities across TV, radio, digital, and print.',
+    results:'Multi-platform coverage achieved across all major media channels. Strong media reach with sustained audience interest throughout release period. Positive critical reception with prominent media features and interviews building strong pre-release momentum.',
+    achievements:[
+      {label:'Platforms',value:'Multi'},
+      {label:'Reach',value:'Strong'},
+      {label:'Interest',value:'Sustained'}
+    ]
+  },
+  {
+    id:'okaidi',
+    title:'Okaidi Obaibi',
+    category:'Reality',
+    image:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Okaidi-Obaibi_.jpg?w=650',
+    img2:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Okaidi-Obaibi_.jpg?w=500',
+    img3:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Alls-Fair-In-Love_.jpg?w=500',
+    client:'Okaidi Productions',
+    challenge:'Build strong audience engagement for new reality series in crowded content landscape.',
+    solution:'Developed multi-platform marketing strategy with social media teasers, exclusive clips, and influencer partnerships. Created community engagement opportunities through interactive content and viewer participation.',
+    results:'Strong community engagement with active viewer participation. Consistent viewership maintained across episodes. Built loyal audience base with sustained return viewership and word-of-mouth recommendations.',
+    achievements:[
+      {label:'Engagement',value:'High'},
+      {label:'Community',value:'Strong'},
+      {label:'Viewership',value:'Consistent'}
+    ]
+  },
+  {
+    id:'accelerate',
+    title:'Accelerate Filmmakers Project',
+    category:'Events',
+    image:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Accelerate-Filmmakers-Project_-scaled.jpg?w=650',
+    img2:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Accelerate-Filmmakers-Project_-scaled.jpg?w=500',
+    img3:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/avatar.jpg?w=500',
+    client:'Accelerate Program',
+    challenge:"Position the Accelerate Filmmakers Project as Africa's premier filmmaker development initiative.",
+    solution:'Comprehensive marketing campaign with media partnerships highlighting program impact and filmmaker testimonials, plus launch events and showcases.',
+    results:'Increased program visibility across industry and media. Attracted exceptional filmmaker applications from across Africa. Gained significant industry recognition and positioning as leading development platform.',
+    achievements:[
+      {label:'Visibility',value:'High'},
+      {label:'Applications',value:'Increased'},
+      {label:'Industry',value:'Recognition'}
+    ]
+  },
+  {
+    id:'diana',
+    title:'Chief Diana Chen Foundation Scholarships',
+    category:'PR',
+    image:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Diana-Chen-Foundation.jpg?w=650',
+    img2:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Diana-Chen-Foundation.jpg?w=500',
+    img3:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Furiosa-Premiere_1.jpg?w=500',
+    client:'Chief Diana Chen Foundation',
+    challenge:"Elevate the foundation's scholarship program reach and impact across communities.",
+    solution:'Strategic PR campaign with community engagement events and media partnerships. Coordinated scholarship announcements, beneficiary stories, and media features.',
+    results:'Community-wide reach with strong awareness among target communities. Meaningful beneficiary engagement and elevated foundation visibility.',
+    achievements:[
+      {label:'Reach',value:'Community'},
+      {label:'Beneficiaries',value:'Many'},
+      {label:'Impact',value:'Significant'}
+    ]
+  },
+  {
+    id:'visa',
+    title:'Visa on Arrival Season 5',
+    category:'Reality',
+    image:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Visa-On-Arrival-Watch-Party_5.jpg?w=650',
+    img2:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Visa-On-Arrival-Watch-Party_5.jpg?w=500',
+    img3:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/avatar.jpg?w=500',
+    client:'Visa on Arrival',
+    challenge:'Maintain viewership momentum while attracting new audiences for Season 5 launch.',
+    solution:'Multi-platform launch strategy with behind-the-scenes content, exclusive fan events, influencer teasers, and watch parties.',
+    results:'Strong audience engagement with high viewership from premiere, growing across the season with expanded viewer base.',
+    achievements:[
+      {label:'Audience',value:'Engaged'},
+      {label:'Reach',value:'Strong'},
+      {label:'Momentum',value:'Growing'}
+    ]
+  },
+  {
+    id:'mimmi',
+    title:"Mimmi Kasu's New Collection – A Piece Of Me",
+    category:'Events',
+    image:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Media-Round-for-Mimmi-Kasu.jpg?w=650',
+    img2:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Media-Round-for-Mimmi-Kasu.jpg?w=500',
+    img3:'https://i0.wp.com/savvymediaafrica.com/wp-content/uploads/2024/08/Alls-Fair-In-Love_.jpg?w=500',
+    client:'Mimmi Kasu',
+    challenge:'Position designer collection as significant cultural moment in fashion industry.',
+    solution:'High-production content storytelling combined with strategic media partnerships, fashion show, previews, and influencer collabs.',
+    results:'Successful collection launch with extensive industry coverage, strong social engagement, and elevated designer profile.',
+    achievements:[
+      {label:'Launch',value:'Successful'},
+      {label:'Coverage',value:'Extensive'},
+      {label:'Buzz',value:'Viral'}
+    ]
+  }
+];
+
+function renderPortfolio(projects = filmProjects){
+  const grid = document.getElementById('portfolioGrid');
+  grid.innerHTML = projects.map(p => `
+    <div class="portfolio-card" onclick="scrollToDetail('${p.id}')">
+      <div class="portfolio-image">
+        <img src="${p.image}" alt="${p.title}" loading="lazy">
+      </div>
+      <div class="portfolio-info">
+        <span class="portfolio-category">${p.category}</span>
+        <h3 class="portfolio-title">${p.title}</h3>
+        <p class="portfolio-description" style="overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical">${p.challenge}</p>
+      </div>
+    </div>
+  `).join('');
+
+  gsap.utils.toArray('.portfolio-card').forEach((card,i)=>{
+    gsap.to(card,{
+      scrollTrigger:{trigger:card,start:'top 90%'},
+      y:0,
+      opacity:1,
+      duration:0.6,
+      delay:i*0.05,
+      ease:'back.out(1.5)'
+    });
+  });
 }
-</style>
-<g>
-<path class="st0" d="M0,80c0,0,28.9-4.2,43-13c14.3-9,71-35.7,137,5c17.3,7.7,33.3,13,48,11c17.3,0.3,50.3,4.7,66,23
-c20.3,9.7,68,40.3,134-12c24-11,59-16.3,104,2c21,7.3,85,27.7,117-14c24-30.7,62.7-55,141-12c26,10.3,72,14.7,110-14
-c37.7-19,89.7-29,122,53c23,32.7,47.7,66.3,97,26c24-22.7,51-78.3,137-38c0,0,28.3,15.7,52,15c23.7-0.7,50.7,4.3,76,41
-c19.7,19.7,71,36.7,121-2c0,0,22.3-16,55-12c0,0,32.7,6.7,56-71c23.3-76,79-92,122-29c9.3,13.7,25,42,62,43c37,1,51.7,25.3,67,48
-c15.3,22.7,51,22.7,53,23v28.1H0V80z" />
-</g>
-</svg>
-</div>
-<!-- <section class="team-area pd-t100 pd-b50">
-<div id="particles-team">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="section-heading2">
-    <h2 class="wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">Core Team</h2>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow  fadeInUp animated" data-wow-duration="1.3s" style="visibility: visible; animation-duration: 1.3s; animation-name: fadeInUp;">
-<div class="team-list">
-    <div class="conte">
-        <div class="dbox">
-            <div class="dleft">
-                <img src="images/team/1.png" alt="" />
+
+function renderDetails(){
+  const container = document.getElementById('detailsContainer');
+  container.innerHTML = filmProjects.map(p => `
+    <section class="detail-section" id="detail-${p.id}">
+      <div class="detail-container">
+        <div class="detail-header">
+          <div class="detail-images">
+            <div class="detail-img-main">
+              <img src="${p.image}" alt="${p.title}">
             </div>
-            <div class="dright">
-                <div class="content">
-                    <h3>Ajay Suryavanshi</h3>
-                    <span>(Co-Founder & CEO)</span>
-                    <ul>
-                        <li><a class="bgOrange" href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a class="bgOrange" href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a class="bgOrange" href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
+            <div class="detail-imgs-small">
+              <div class="detail-img-small"><img src="${p.img2}" alt="${p.title}"></div>
+              <div class="detail-img-small"><img src="${p.img3}" alt="${p.title}"></div>
+            </div>
+          </div>
+
+          <div class="detail-content">
+            <div class="detail-client">${p.client}</div>
+            <h2>${p.title}</h2>
+
+            <div class="detail-boxes">
+              <div class="detail-box">
+                <div class="detail-box-label">Challenge</div>
+                <div class="detail-box-text">${p.challenge}</div>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-label">Solution</div>
+                <div class="detail-box-text">${p.solution}</div>
+              </div>
+              <div class="detail-box">
+                <div class="detail-box-label">Results</div>
+                <div class="detail-box-text">${p.results}</div>
+              </div>
+            </div>
+
+            <div class="detail-stats">
+              ${p.achievements.map(s => `
+                <div class="detail-stat">
+                  <div class="detail-stat-number">${s.value}</div>
+                  <div class="detail-stat-label">${s.label}</div>
                 </div>
+              `).join('')}
             </div>
+          </div>
         </div>
-        <div class="con">
-            <p>Ajay Suryavanshi is our new Co-Founder and Chief Executive Officer. </p>
-        </div>
-    </div>
-</div>
-</div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow  fadeInUp animated" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp;">
-<div class="team-list">
-    <div class="conte">
-        <div class="dbox">
-            <div class="dleft">
-                <img src="images/team/2.png" alt="" />
-            </div>
-            <div class="dright">
-                <div class="content">
-                    <h3>Jeniffer Doen</h3>
-                    <span>(Co-Founder & CIO)</span>
-                    <ul>
-                        <li><a class="bgOrange" href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a class="bgOrange" href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a class="bgOrange" href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="con">
-            <p>Jeniffer Doen is also a Co-Founder and Chief Investments Officer at Phenomnet. </p>
-        </div>
-    </div>
-</div>
-</div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow  fadeInUp animated" data-wow-duration="1.9s" style="visibility: visible; animation-duration: 1.9s; animation-name: fadeInUp;">
-<div class="team-list">
-    <div class="conte">
-        <div class="dbox">
-            <div class="dleft">
-                <img src="images/team/3.png" alt="" />
-            </div>
-            <div class="dright">
-                <div class="content">
-                    <h3>Askay Angel</h3>
-                    <span>(CTO)</span>
-                    <ul>
-                        <li><a class="bgOrange" href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a class="bgOrange" href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a class="bgOrange" href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="con">
-            <p>Askay Angel is also the Chief Technology Officer at Phenomnet.</p>
-        </div>
-    </div>
-</div>
-</div>
-<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 wow  fadeInUp animated" data-wow-duration="2.1s" style="visibility: visible; animation-duration: 2.1s; animation-name: fadeInUp;">
-<div class="team-list">
-    <div class="conte">
-        <div class="dbox">
-            <div class="dleft">
-                <img src="images/team/4.png" alt="" />
-            </div>
-            <div class="dright">
-                <div class="content">
-                    <h3>Mekk William</h3>
-                    <span>(Senior Advisor)</span>
-                    <ul>
-                        <li><a class="bgOrange" href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a class="bgOrange" href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a class="bgOrange" href="#"><i class="fa fa-linkedin"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="con">
-            <p>Mekk William is appointed senior advisor, in charge of investment and portfolio at Phenomnet.</p>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<div class="sud">
-<svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 181.1" style="enable-background:new 0 0 1920 181.1;" xml:space="preserve">
-<style type="text/css">
-.st0 {
-fill-rule: evenodd;
-clip-rule: evenodd;
-fill: #10122d;
+      </div>
+    </section>
+  `).join('');
 }
-</style>
-<g>
-<path class="st0" d="M0,80c0,0,28.9-4.2,43-13c14.3-9,71-35.7,137,5c17.3,7.7,33.3,13,48,11c17.3,0.3,50.3,4.7,66,23
-c20.3,9.7,68,40.3,134-12c24-11,59-16.3,104,2c21,7.3,85,27.7,117-14c24-30.7,62.7-55,141-12c26,10.3,72,14.7,110-14
-c37.7-19,89.7-29,122,53c23,32.7,47.7,66.3,97,26c24-22.7,51-78.3,137-38c0,0,28.3,15.7,52,15c23.7-0.7,50.7,4.3,76,41
-c19.7,19.7,71,36.7,121-2c0,0,22.3-16,55-12c0,0,32.7,6.7,56-71c23.3-76,79-92,122-29c9.3,13.7,25,42,62,43c37,1,51.7,25.3,67,48
-c15.3,22.7,51,22.7,53,23v28.1H0V80z" />
-</g>
-</svg>
-</div>
-</div>
-<div section-scroll='7' class="wd_scroll_wrap">
-<section class="blog-area section">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="section-heading2">
-<h2 class="wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">User Testimonials</h2>
-</div>
-</div>
-</div>
-<div class="row">
-<div class="blog-slider">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="blog wow  fadeInUp animated" data-wow-duration="1.3s" style="visibility: visible; animation-duration: 1.3s; animation-name: fadeInUp;">
-    <figure><img src="images/blog/1.jpg" alt="User Testimonials" title="User Testimonials" /></figure>
-    <div class="content">
-        <span><i class="fa  fa-calendar-o"></i>January 29, 2018</span> 
-        <h4><a href="#"></a></h4>
-        <p class="text-white">I admire the knowledge of the owners and administrators on investment issues.</p>
-         <a href="#" class="blog-btn">read more <i class="fa  fa-arrow-circle-o-right"></i></a> -->
-    <!-- </div> 
-</div>
-</div>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="blog wow  fadeInUp animated" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp;">
-    <figure><img src="images/blog/2.jpg" alt="User Testimonials" title="User Testimonials" /></figure>
-    <div class="content">
-         <span><i class="fa  fa-calendar-o"></i>January 29, 2018</span> -->
-        <!-- <h4><a href="#"></a></h4>
-            <p class="text-white">I love the user friendly interface that is implemented on the website.</p> -->
-        <!-- <a href="#" class="blog-btn">read more <i class="fa  fa-arrow-circle-o-right"></i></a> -->
-    <!-- </div>
-</div>
-</div>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="blog wow  fadeInUp animated" data-wow-duration="1.8s" style="visibility: visible; animation-duration: 1.8s; animation-name: fadeInUp;">
-    <figure><img src="images/blog/3.jpg" alt="User Testimonials" title="User Testimonials" /></figure>
-    <div class="content">
-        <span><i class="fa  fa-calendar-o"></i>January 29, 2018</span> -->
-        <!-- <h4><a href="#"></a></h4>
-        <p class="text-white">This platform is good and accurate in terms of hashing and compounding rate.</p> -->
-      <!--   <a href="#" class="blog-btn">read more <i class="fa  fa-arrow-circle-o-right"></i></a> -->
-    <!-- </div>
-</div>
-</div>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="blog">
-    <figure><img src="images/blog/4.jpg" alt="User Testimonials" title="User Testimonials" /></figure>
-    <div class="content"> -->
-      <!--   <span><i class="fa  fa-calendar-o"></i>January 29, 2018</span> -->
-        <!-- <h4><a href="#"></a></h4>
-            <p class="text-white">The live chat support included on site is too slow</p> --> -->
-       <!--  <a href="#" class="blog-btn">read more <i class="fa  fa-arrow-circle-o-right"></i></a>  -->
-   <!-- </div>
-</div>
-</div>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
-<div class="blog">
-    <figure><img src="images/blog/5.jpg" alt="User Testimonials" title="User Testimonials" /></figure>
-    <div class="content">
-         <span><i class="fa  fa-calendar-o"></i>January 29, 2018</span> 
-        <h4><a href="#"></a></h4>
-        <p class="text-white">Phenomnet is recommended, anyday, anytime.</p>
-         <a href="#" class="blog-btn">read more <i class="fa  fa-arrow-circle-o-right"></i></a> -->  --> -->
-    <!-- </div>
-</div>
-</div>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="blog">
-    <figure><img src="images/blog/6.jpg" alt="User Testimonials" title="User Testimonials" /></figure>
-    <div class="content">
-         <span><i class="fa  fa-calendar-o"></i>January 29, 2018</span> -->
-        <!-- <h4><a href="#"></a></h4> -->
-        <!-- <p class="text-white">I admire the easy to navigate nature of the website and dashboard</p> --> 
-        <!-- <a href="#" class="blog-btn">read more <i class="fa  fa-arrow-circle-o-right"></i></a> -->
-    <!-- </div>
-</div>
-</div>
-</div> --> 
-<!-- <div class="view-btn">
-<a class="bgOrange" href="user/login.php">Join Other Members</a>
-</div>
-</div>
-</div>
-</section> -->
-<!-- <section class="media-area section bg-img jarallax">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="section-heading">
-<h2 class="wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">Crypto Partners We Work With</h2>
-</div>
-</div>
-<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 col-lg-offset-2 col-md-offset-2">
-<div class="mediabrand">
-<ul>
-    <li class="wow  fadeInUp animated" data-wow-duration="1.3s" style="visibility: visible; animation-duration: 1.3s; animation-name: fadeInUp;">
-        <a href="#"><img src="images/media/1.png" alt="" /></a>
-    </li>
-    <li class="wow  fadeInUp animated" data-wow-duration="1.6s" style="visibility: visible; animation-duration: 1.6s; animation-name: fadeInUp;">
-        <a href="#"><img src="images/media/2.png" alt="" /></a>
-    </li>
-    <li class="wow  fadeInUp animated" data-wow-duration="1.9s" style="visibility: visible; animation-duration: 1.9s; animation-name: fadeInUp;">
-        <a href="#"><img src="images/media/3.png" alt="" /></a>
-    </li>
-    <li class="wow  fadeInUp animated" data-wow-duration="2.1s" style="visibility: visible; animation-duration: 2.1s; animation-name: fadeInUp;">
-        <a href="#"><img src="images/media/4.png" alt="" /></a>
-    </li>
-    <li class="wow  fadeInUp animated" data-wow-duration="2.4s" style="visibility: visible; animation-duration: 2.4s; animation-name: fadeInUp;">
-        <a href="#"><img src="images/media/5.png" alt="" /></a>
-    </li>
-    <li class="wow  fadeInUp animated" data-wow-duration="2.7s" style="visibility: visible; animation-duration: 2.7s; animation-name: fadeInUp;">
-        <a href="#"><img src="images/media/6.png" alt="" /></a>
-    </li>
-	<li class="wow  fadeInUp animated" data-wow-duration="2.7s" style="visibility: visible; animation-duration: 2.7s; animation-name: fadeInUp;">
-        <a href="#"><img src="images/media/7.png" alt="" /></a>
-    </li>
-	<li class="wow  fadeInUp animated" data-wow-duration="2.7s" style="visibility: visible; animation-duration: 2.7s; animation-name: fadeInUp;">
-        <a href="#"><img src="images/media/8.png" alt="" /></a>
-    </li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</section> -->
-<!--Footer area start here-->
-<footer class="top-foo">
-<div id="footer-js">
-<div class="footer-top section">
-<div class="container">
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="con">
-        <h2 class="wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">Never Miss a Thing Again<br>Join us and be updated!</h2>
-        <ul>
-            <li class="wow  fadeInUp animated" data-wow-duration="1.3s" style="visibility: visible; animation-duration: 1.3s; animation-name: fadeInUp;"><a class="bgOrange" href="#"><i class="fa fa-facebook"></i></a></li>
-            <li class="wow  fadeInUp animated" data-wow-duration="1.5s" style="visibility: visible; animation-duration: 1.5; animation-name: fadeInUp;"><a class="bgOrange" href="#"><i class="fa fa-twitter"></i></a></li>
-            <li class="wow  fadeInUp animated" data-wow-duration="1.9s" style="visibility: visible; animation-duration: 1.9s; animation-name: fadeInUp;"><a class="bgOrange" href="#"><i class="fa fa-send-o"></i></a></li>
-            <!-- <li class="wow  fadeInUp animated" data-wow-duration="2.1s" style="visibility: visible; animation-duration: 2.1s; animation-name: fadeInUp;"><a class="bgOrange" href="#"><i class="fa fa-bitcoin"></i></a></li> -->
-            <li class="wow  fadeInUp animated" data-wow-duration="2.4s" style="visibility: visible; animation-duration: 2.4s; animation-name: fadeInUp;"><a class="bgOrange" href="mailto:support@zenithbrokertrade.org"><i class="fa fa-envelope"></i></a></li>
-        </ul>
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="search_btm wow  fadeInUp animated" data-wow-duration="2.6s" style="visibility: visible; animation-duration: 2.6s; animation-name: fadeInUp;">
-                    <div class="search_main">
-                        <input type="text" placeholder="enter your email address">
-                        <button class="bgOrange" type="submit">subscribe</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</footer>
-<footer class="foo-bot">
-<div class="footer-bottom">
-<div class="container-fluid">
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="copyright wow  fadeInUp animated" data-wow-duration="1.9s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
-    <p style="padding:10px 0 !important;"><center><small>©&nbsp;<?= date('Y');?>&nbsp;<a href="#"><span class="orange">Phenomnet</span></a> | All rights reserved.&nbsp;Phenomnet is a registered investment platform providing digital asset investment management services to individuals, lending and investment, multicurrency and multifunctional online platform based on blockchain technology.&nbsp;Phenomnet is the easiest place to Bitcoin.</small></center></p>
-</div>
-</div>
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-<div class="foo-link wow  fadeInUp animated" data-wow-duration="1.0s" style="visibility: visible; animation-duration: 1.0s; animation-name: fadeInUp;">
-   <ul>
-    <center><small>
-        <li><a hreftrade ="user/login.php">Login/Register</a></li>
-        <li><a href="docs/terms-of-use.php">Terms of Service</a></li>
-        <li><a href="docs/about.php">About</a></li>
-        <li><a href="docs/cookie-policy.php">Cookie Policy</a></li>
-        <li><a href="docs/refund-policy.php">Refund Policy</a></li>
-        <li><a href="docs/privacy-policy.php">Privacy Policy</a></li>
-    </small></center>
-    </ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</footer>
-</div>
-<!--Footer area end here-->
-<!-- all js here -->
-<!-- jquery latest version -->
-<script src="js/vendor/jquery-3.2.1.min.js"></script>
-<!-- tether js -->
-<script src="js/tether.min.js"></script>
-<!-- bootstrap js -->
-<script src="js/bootstrap.min.js"></script>
-<!-- owl.carousel js -->
-<script src="js/owl.carousel.min.js"></script>
-<!-- meanmenu js -->
-<script src="js/jquery.meanmenu.js"></script>
-<!-- jquery-ui js -->
-<script src="js/jquery-ui.min.js"></script>
-<!-- easypiechart js -->
-<script src="js/jquery.easypiechart.min.js"></script>
-<!-- particles js -->
-<!-- wow js -->
-<script src="js/wow.min.js"></script>
-<!-- smooth-scroll js -->
-<script src="js/smooth-scroll.min.js"></script>
-<!-- plugins js -->
-<script src="js/plugins.js"></script>
-<!-- EChartJS JavaScript -->
-<script src="js/echarts-en.min.js"></script>
-<script src="js/echarts-liquidfill.min.js"></script>
-<script src="js/vc_round_chart.min.js"></script>
-<script src="js/videojs-ie8.min.js"></script>
-<script src="js/video.js"></script>
-<script src="js/Youtube.min.js"></script>
-<!-- main js -->
-<script src="js/main.js"></script>
-<script src="//code.tidio.co/4amhwb6g67tepvxrle85xmbmlwjyunkk.js" async></script>
+
+function scrollToDetail(id){
+  document.querySelectorAll('.detail-section').forEach(el => el.classList.remove('active'));
+  const el = document.getElementById(`detail-${id}`);
+  if(el){
+    el.classList.add('active');
+    setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),50);
+  }
+}
+
+// Filters
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    this.classList.add('active');
+    const filter = this.getAttribute('data-filter');
+    renderPortfolio(filter === 'all' ? filmProjects : filmProjects.filter(p=>p.category===filter));
+  });
+});
+
+// Custom cursor
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follower');
+
+document.addEventListener('mousemove',e=>{
+  cursor.style.left = (e.clientX - 4) + 'px';
+  cursor.style.top  = (e.clientY - 4) + 'px';
+  setTimeout(()=>{
+    cursorFollower.style.left = (e.clientX - 16) + 'px';
+    cursorFollower.style.top  = (e.clientY - 16) + 'px';
+  },60);
+});
+
+document.addEventListener('mouseover',e=>{
+  if(e.target.closest('a, button, .portfolio-card')){
+    cursor.style.transform = 'scale(1.6)';
+    cursorFollower.style.transform = 'scale(2.2)';
+  }
+});
+
+document.addEventListener('mouseout',e=>{
+  if(e.target.closest('a, button, .portfolio-card')){
+    cursor.style.transform = 'scale(1)';
+    cursorFollower.style.transform = 'scale(1)';
+  }
+});
+
+// Hero animations
+gsap.to('.hero-title .word',{
+  y:0,scale:1,rotation:0,opacity:1,
+  duration:1,
+  stagger:0.06,
+  ease:'power4.out',
+  delay:0.05
+});
+gsap.to('.hero-subtitle',{opacity:1,duration:0.8,delay:0.8});
+
+gsap.utils.toArray('[data-parallax]').forEach(el=>{
+  const amt = +el.getAttribute('data-parallax') || 10;
+  gsap.to(el,{
+    y:amt,
+    scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:1}
+  });
+});
+
+// Scroll top
+const scrollBtn = document.getElementById('scrollTopBtn');
+const scrollPct = document.getElementById('scrollPct');
+
+function setScrollProgress(){
+  const st = window.scrollY;
+  const h  = document.documentElement.scrollHeight - innerHeight;
+  const p  = h>0 ? Math.round((st/h)*100) : 0;
+  document.documentElement.style.setProperty('--scroll',p);
+  scrollBtn.style.setProperty('--scroll',p);
+  scrollPct.textContent = p + '%';
+  scrollBtn.classList.toggle('visible',st>380);
+}
+
+setScrollProgress();
+window.addEventListener('scroll',setScrollProgress,{passive:true});
+scrollBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// Init grid + details
+renderPortfolio();
+renderDetails();
+</script>
+
+<!-- load header/footer includes -->
+<script src="/include.js"></script>
+
+<!-- header scroll behaviour (waits until header.html is injected) -->
+<script>
+(function waitForNav(){
+  const nav = document.getElementById('nav');
+  if(!nav){
+    requestAnimationFrame(waitForNav);
+    return;
+  }
+  function handleNavScroll(){
+    if(window.scrollY > 80){
+      nav.classList.add('scrolled');
+    }else{
+      nav.classList.remove('scrolled');
+    }
+  }
+  handleNavScroll();
+  window.addEventListener('scroll',handleNavScroll,{passive:true});
+})();
+</script>
+
 </body>
-
 </html>
